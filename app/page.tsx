@@ -1,4 +1,5 @@
 import Intro from "@/components/Intro";
+import TechStack from "@/components/TechStack";
 
 export default function Home() {
   const title = "Hey, Slobodan here!";
@@ -13,5 +14,10 @@ export default function Home() {
     { text: "Facebook", href: "https://www.facebook.com/slobodan.bajic.716/" },
   ];
 
-  return <Intro title={title} text={text} links={links} />;
+  return (
+    <>
+      <Intro title={title} text={text} links={links} />
+      <TechStack />
+    </>
+  );
 }
