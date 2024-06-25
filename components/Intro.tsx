@@ -9,7 +9,7 @@ interface Link {
 interface IntroProps {
   title: string;
   text: string;
-  links: Link[];
+  links?: Link[];
 }
 
 const Intro: React.FC<IntroProps> = ({ title, text, links }) => {
@@ -25,7 +25,7 @@ const Intro: React.FC<IntroProps> = ({ title, text, links }) => {
       <h1 className="text-3xl font-bold">{title}</h1>
       <p className="mt-4 text-md">{text}</p>
       <div className="flex space-x-4 mt-6">
-        {links.map((link, index) => (
+        {links?.map((link, index) => (
           <a
             key={index}
             href={link.href}
