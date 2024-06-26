@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { workExperience } from "@/data";
 
 interface AboutProps {
   title: string;
@@ -57,6 +58,34 @@ const AboutSection: React.FC<AboutProps> = ({ title, image }) => {
             <FaLinkedin />
             LinkedIn
           </a>
+        </div>
+      </div>
+      <div className="dark:text-white font-sans mx-auto lg:flex gap-20 mt-10">
+        <h2 className="text-lg mb-4 dark:text-grey">Work</h2>
+        <div className="flex flex-col">
+          <p className="dark:text-white mb-8">
+            I specialize in Next.js, React.js, web development, UI/UX, and
+            consulting. But I am always learning new things. Here are some of
+            the places I have worked.
+          </p>
+          <div className="mt-4 space-y-4">
+            {workExperience.map((work) => (
+              <div key={work.id} className="flex items-center flex-row gap-4">
+                <Image
+                  src={work.image}
+                  alt={work.company}
+                  width={100}
+                  height={100}
+                  className="w-10 h-10"
+                />
+                <div>
+                  <h3 className="text-lg dark:text-white">{work.title}</h3>
+                  <p className="dark:text-grey text-sm">{work.company}</p>
+                </div>
+                <span className="ml-auto dark:text-grey">{work.duration}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
