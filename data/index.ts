@@ -24,3 +24,34 @@ export const techStack = [
     image: "/tech/ui-design.png",
   },
 ];
+
+export const workExperience = [
+  {
+    id: 1,
+    title: "Full Stack Developer",
+    company: "Net Partner 011 AB",
+    image: "/logos/np011.svg",
+    duration: "2023 - 2024",
+  },
+  {
+    id: 2,
+    title: "Web Developer",
+    company: "Digital Arts Agency",
+    image: "/logos/digital-arts.svg",
+    duration: "2022 - 2023",
+  },
+  {
+    id: 3,
+    title: "Web Developer",
+    company: "Wonderland AI Summit",
+    image: "/logos/wai-logo-new.png",
+    duration: "2020 - 2022",
+  },
+  {
+    id: 4,
+    title: "Frontend Developer",
+    company: "Freelance",
+    image: "/logos/logo-blue.svg",
+    duration: "2019 - ",
+  },
+];

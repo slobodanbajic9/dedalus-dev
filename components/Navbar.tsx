@@ -27,19 +27,21 @@ export default function Navbar() {
   };
 
   const links = [
-    { label: "About", href: "#about" },
+    { label: "About", href: "/about" },
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
   ];
 
   return (
     <header className="flex justify-between items-center py-4 px-4 md:px-8">
-      <Image
-        src={resolvedTheme === "dark" ? whiteLogo : blackLogo}
-        alt="logo"
-        width={50}
-        height={50}
-      />
+      <a href="/">
+        <Image
+          src={resolvedTheme === "dark" ? whiteLogo : blackLogo}
+          alt="logo"
+          width={50}
+          height={50}
+        />
+      </a>
       <nav className="hidden md:flex space-x-6">
         <ul className="flex space-x-6">
           {links.map((link, index) => (
