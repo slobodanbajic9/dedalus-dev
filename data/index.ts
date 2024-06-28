@@ -9,7 +9,7 @@ export const techStack = [
     id: 2,
     title: "App Development",
     description: "Developing cross-platform mobile applications.",
-    image: "/tech/app-dev.png",
+    image: "/tech/mobile-app.png",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ export const techStack = [
     id: 4,
     title: "SEO Optimization",
     description: "Improving website visibility and search engine ranking.",
-    image: "/tech/ui-design.png",
+    image: "/tech/seo.png",
   },
 ];
 

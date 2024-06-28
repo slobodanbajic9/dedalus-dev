@@ -1,5 +1,5 @@
 import Image from "next/image";
-import avatar from "@/public/slobodan.jpg";
+import avatar from "@/public/prof.png";
 
 interface Link {
   href: string;
@@ -18,8 +18,8 @@ const Intro: React.FC<IntroProps> = ({ title, text, links }) => {
       <Image
         src={avatar}
         alt="avatar"
-        width={100}
-        height={100}
+        width={150}
+        height={150}
         className="rounded-full"
       />
       <h1 className="text-3xl font-bold">{title}</h1>
