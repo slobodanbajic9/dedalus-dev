@@ -14,6 +14,7 @@ const config = {
       black: "#111111",
       white: "#eeeeee",
       grey: "#b4b4b4",
+      "grey-dark": "#343a40",
     },
     container: {
       center: true,
