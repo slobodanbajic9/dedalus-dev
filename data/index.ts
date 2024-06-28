@@ -19,8 +19,8 @@ export const techStack = [
   },
   {
     id: 4,
-    title: "UI/UX",
-    description: "Designing user-friendly and aesthetic interfaces.",
+    title: "SEO Optimization",
+    description: "Improving website visibility and search engine ranking.",
     image: "/tech/ui-design.png",
   },
 ];
@@ -53,5 +53,26 @@ export const workExperience = [
     company: "Freelance",
     image: "/logos/logo-blue.svg",
     duration: "2019 - ",
+  },
+];
+
+export const projects = [
+  {
+    title: "Net Partner 011 AB",
+    description: "Short description of the project goes here.",
+    image: "/projects/np011.png",
+    link: "https://www.np011.se/",
+  },
+  {
+    title: "Project Title 2",
+    description: "Short description of the project goes here.",
+    image: "/projects/np011.png",
+    link: "https://www.np011.se/",
+  },
+  {
+    title: "Project Title 3",
+    description: "Short description of the project goes here.",
+    image: "/projects/np011.png",
+    link: "https://www.np011.se/",
   },
 ];
