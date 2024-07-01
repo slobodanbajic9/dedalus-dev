@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { workExperience } from "@/data";
 
@@ -38,26 +39,26 @@ const AboutSection: React.FC<AboutProps> = ({ title, image }) => {
       <div className="mt-10 lg:flex gap-16">
         <h2 className="text-lg dark:text-grey mb-4">Connect</h2>
         <div className="flex flex-wrap gap-6">
-          <a
+          <Link
             href="mailto:slobodan.bajic9@gmail.com"
             className="flex items-center gap-2 dark:text-white border p-2 rounded-lg">
             <FaEnvelope />
             Email
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://github.com/slobodanbajic9"
             target="_blank"
             className="flex items-center gap-2 dark:text-white border p-2 rounded-lg">
             <FaGithub />
             GitHub
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://www.linkedin.com/in/slobodanbajicdev/"
             target="_blank"
             className="flex items-center gap-2 dark:text-white border p-2 rounded-lg">
             <FaLinkedin />
             LinkedIn
-          </a>
+          </Link>
         </div>
       </div>
       <div className="dark:text-white font-sans mx-auto lg:flex gap-20 mt-10">

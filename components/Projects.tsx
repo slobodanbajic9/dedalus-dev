@@ -1,5 +1,6 @@
 import { projects } from "@/data";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProjectsProps {
   title: string;
@@ -14,7 +15,7 @@ const ProjectsIntro: React.FC<ProjectsProps> = ({ title, text }) => {
       <h2 className="text-lg mb-4 dark:text-grey mt-10">Pinned Projects</h2>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
-          <a href={project.link} key={index} target="_blank">
+          <Link href={project.link} key={index} target="_blank">
             <div className="rounded-lg mt-4 mb-4">
               <div className="mb-4 flex items-center justify-center gap-8">
                 <Image
@@ -28,7 +29,7 @@ const ProjectsIntro: React.FC<ProjectsProps> = ({ title, text }) => {
               <h3 className="text-md">{project.title}</h3>
               <p className="dark:text-grey text-sm">{project.description}</p>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </section>

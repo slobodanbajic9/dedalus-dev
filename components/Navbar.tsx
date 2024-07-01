@@ -1,26 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { ModeToggle } from "./ModeToggle";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 import { FiMenu, FiX } from "react-icons/fi";
 
 import whiteLogo from "@/public/logo-white.svg";
 import blackLogo from "@/public/logo-black.svg";
 
 export default function Navbar() {
-  const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -34,29 +26,29 @@ export default function Navbar() {
 
   return (
     <header className="flex justify-between items-center py-4 px-4 md:px-8">
-      <a href="/">
+      <Link href="/">
         <Image
           src={resolvedTheme === "dark" ? whiteLogo : blackLogo}
           alt="logo"
           width={50}
           height={50}
         />
-      </a>
+      </Link>
       <nav className="hidden md:flex space-x-6">
         <ul className="flex space-x-6">
           {links.map((link, index) => (
             <li key={index}>
-              <a
+              <Link
                 href={link.href}
                 className="hover:underline underline-offset-4">
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
       </nav>
       <div className="flex items-center space-x-4">
-        <ModeToggle />
+        <ThemeSwitcher />
         <button onClick={toggleMenu} className="focus:outline-none md:hidden">
           {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
@@ -66,12 +58,12 @@ export default function Navbar() {
           <ul className="flex flex-col space-y-4">
             {links.map((link, index) => (
               <li key={index}>
-                <a
+                <Link
                   href={link.href}
                   className="hover:underline underline-offset-4"
                   onClick={toggleMenu}>
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
