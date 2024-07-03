@@ -11,7 +11,6 @@ export default function Home() {
   const links = [
     { text: "GitHub", href: "https://github.com/slobodanbajic9" },
     { text: "Linkedin", href: "https://www.linkedin.com/in/slobodanbajicdev/" },
-    { text: "Facebook", href: "https://www.facebook.com/slobodan.bajic.716/" },
   ];
 
   return (
