@@ -12,7 +12,7 @@ const AboutSection: React.FC<AboutProps> = ({ title, image }) => {
   return (
     <section className="flex flex-col items-start mt-16 gap-4 text-left">
       <h1 className="text-3xl font-bold">{title}</h1>
-      <div className="flex space-x-4 mt-4">
+      <div className="flex space-x-4 mt-4 mx-auto sm:mx-0">
         <Image
           src={image}
           alt="coding"

@@ -59,20 +59,26 @@ export const workExperience = [
 export const projects = [
   {
     title: "Net Partner 011 AB",
-    description: "Short description of the project goes here.",
-    image: "/projects/np011.png",
+    description: "Web agency website built in Next.js with Contentful CMS.",
+    image: "/projects/np011.jpg",
     link: "https://www.np011.se/",
   },
   {
-    title: "Project Title 2",
-    description: "Short description of the project goes here.",
-    image: "/projects/np011.png",
-    link: "https://www.np011.se/",
+    title: "None",
+    description: "Ecommerce multi-language webshop built in Wordpress CMS.",
+    image: "/projects/none.jpg",
+    link: "https://noneshop.rs/",
   },
   {
-    title: "Project Title 3",
-    description: "Short description of the project goes here.",
-    image: "/projects/np011.png",
-    link: "https://www.np011.se/",
+    title: "Adaktar cosmetics",
+    description: "Ecommerce webshop developed using Wordpress CMS and Woocommerce.",
+    image: "/projects/adaktar.jpg",
+    link: "https://adaktarcosmetics.com/",
+  },
+  {
+    title: "Mykash",
+    description: "Fashion brand presentation.",
+    image: "/projects/mykash.jpg",
+    link: "https://mykashofficial.com/",
   },
 ];
