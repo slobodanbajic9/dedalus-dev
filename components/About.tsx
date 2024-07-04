@@ -1,18 +1,30 @@
+"use client";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { workExperience } from "@/data";
+import { motion } from "framer-motion";
 
 interface AboutProps {
   title: string;
   image: StaticImageData;
 }
 
-const AboutSection: React.FC<AboutProps> = ({ title, image }) => {
+export default function AboutSection({ title, image }: AboutProps) {
   return (
     <section className="flex flex-col items-start mt-16 gap-4 text-left">
-      <h1 className="text-3xl font-bold">{title}</h1>
-      <div className="flex space-x-4 mt-4 mx-auto sm:mx-0">
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="text-3xl font-bold">
+        {title}
+      </motion.h1>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="flex space-x-4 mt-4 mx-auto sm:mx-0">
         <Image
           src={image}
           alt="coding"
@@ -20,8 +32,12 @@ const AboutSection: React.FC<AboutProps> = ({ title, image }) => {
           height={300}
           className="w-full h-full object-cover rounded-lg"
         />
-      </div>
-      <div className="dark:text-white font-sans mx-auto lg:flex gap-20 mt-10">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="dark:text-white font-sans mx-auto lg:flex gap-20 mt-10">
         <h1 className="text-lg mb-4 dark:text-grey">About</h1>
         <div>
           <p className="mb-4">
@@ -35,8 +51,12 @@ const AboutSection: React.FC<AboutProps> = ({ title, image }) => {
             football, riding my bike, or at a local coffee shop. :)
           </p>
         </div>
-      </div>
-      <div className="mt-10 lg:flex gap-16">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        className="mt-10 lg:flex gap-16">
         <h2 className="text-lg dark:text-grey mb-4">Connect</h2>
         <div className="flex flex-wrap gap-6">
           <Link
@@ -60,8 +80,12 @@ const AboutSection: React.FC<AboutProps> = ({ title, image }) => {
             LinkedIn
           </Link>
         </div>
-      </div>
-      <div className="dark:text-white font-sans mx-auto lg:flex gap-20 mt-10">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="dark:text-white font-sans mx-auto lg:flex gap-20 mt-10">
         <h2 className="text-lg mb-4 dark:text-grey">Work</h2>
         <div className="flex flex-col">
           <p className="dark:text-white mb-8">
@@ -71,7 +95,12 @@ const AboutSection: React.FC<AboutProps> = ({ title, image }) => {
           </p>
           <div className="mt-4 space-y-4">
             {workExperience.map((work) => (
-              <div key={work.id} className="flex items-center flex-row gap-4">
+              <motion.div
+                key={work.id}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className="flex items-center flex-row gap-4">
                 <Image
                   src={work.image}
                   alt={work.company}
@@ -84,13 +113,11 @@ const AboutSection: React.FC<AboutProps> = ({ title, image }) => {
                   <p className="dark:text-grey text-sm">{work.company}</p>
                 </div>
                 <span className="ml-auto dark:text-grey">{work.duration}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
-};
-
-export default AboutSection;
+}
