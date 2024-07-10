@@ -1,6 +1,8 @@
+"use client";
 import { projects } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface ProjectsProps {
   title: string;
@@ -10,10 +12,32 @@ interface ProjectsProps {
 const ProjectsIntro: React.FC<ProjectsProps> = ({ title, text }) => {
   return (
     <section className="flex flex-col items-start mt-16 gap-4 text-left">
-      <h1 className="text-3xl font-bold">{title}</h1>
-      <p className="mt-4 text-md">{text}</p>
-      <h2 className="text-lg mb-4 dark:text-grey mt-10">Pinned Projects</h2>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 mx-auto sm:mx-0">
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="text-3xl font-bold">
+        {title}
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mt-4 text-md">
+        {text}
+      </motion.p>
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="text-lg mb-4 dark:text-grey mt-10">
+        Pinned Projects
+      </motion.h2>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 mx-auto sm:mx-0">
         {projects.map((project, index) => (
           <Link href={project.link} key={index} target="_blank">
             <div className="rounded-lg mt-4 mb-4 max-w-full">
@@ -33,9 +57,15 @@ const ProjectsIntro: React.FC<ProjectsProps> = ({ title, text }) => {
             </div>
           </Link>
         ))}
-      </div>
+      </motion.div>
 
-      <h2 className="text-lg mb-4 dark:text-grey">More projects soon...</h2>
+      <motion.h2
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="text-lg mb-4 dark:text-grey">
+        More projects soon...
+      </motion.h2>
     </section>
   );
 };

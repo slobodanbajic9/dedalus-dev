@@ -1,12 +1,24 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { techStack } from "@/data";
 
 export default function TechStack() {
   return (
-    <div className="dark:bg-black rounded-lg mt-10">
-      <h2 className="dark:text-white text-lg mb-6">What I do</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <section className="dark:bg-black rounded-lg mt-10">
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="dark:text-white text-lg mb-6">
+        What I do
+      </motion.h2>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {techStack.map((tech) => (
           <div
             key={tech.id}
@@ -16,7 +28,7 @@ export default function TechStack() {
             <p className="text-gray-400 text-sm">{tech.description}</p>
           </div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 }

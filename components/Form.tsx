@@ -1,6 +1,7 @@
 "use client";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { sendEmail } from "@/lib/resend";
+import { motion } from "framer-motion";
 
 interface FormData {
   fullName: string;
@@ -34,8 +35,11 @@ const Form = () => {
   };
 
   return (
-    <form
+    <motion.form
       onSubmit={handleSubmit}
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, delay: 0.8 }}
       className="flex flex-col gap-8 justify-between w-full">
       <input
         type="text"
@@ -70,7 +74,7 @@ const Form = () => {
         className="bg-grey-dark py-3 text-white rounded-lg dark:bg-grey-dark dark:text-white w-[150px]">
         Send message
       </button>
-    </form>
+    </motion.form>
   );
 };
 
