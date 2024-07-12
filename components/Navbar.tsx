@@ -3,15 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useTheme } from "next-themes";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { FiMenu, FiX } from "react-icons/fi";
 
-import whiteLogo from "@/public/logo-white.svg";
-import blackLogo from "@/public/logo-black.svg";
+import logo from "@/public/logo.svg";
 
 export default function Navbar() {
-  const { resolvedTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -27,12 +24,7 @@ export default function Navbar() {
   return (
     <header className="flex justify-between items-center py-4 px-4 md:px-8">
       <Link href="/">
-        <Image
-          src={resolvedTheme === "dark" ? whiteLogo : blackLogo}
-          alt="logo"
-          width={50}
-          height={50}
-        />
+        <Image src={logo} alt="logo" width={50} height={50} />
       </Link>
       <nav className="hidden md:flex space-x-6">
         <ul className="flex space-x-6">
