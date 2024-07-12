@@ -6,7 +6,7 @@ import Image from "next/image";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { FiMenu, FiX } from "react-icons/fi";
 
-import logo from "@/public/logo.svg";
+import logo from "@/public/logo/logo.svg";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
