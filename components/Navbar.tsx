@@ -6,6 +6,8 @@ import Image from "next/image";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { FiMenu, FiX } from "react-icons/fi";
 
+import CVButton from "./CVButton";
+
 import logo from "@/public/logo/logo.svg";
 
 export default function Navbar() {
@@ -26,7 +28,7 @@ export default function Navbar() {
       <Link href="/">
         <Image src={logo} alt="logo" width={50} height={50} />
       </Link>
-      <nav className="hidden md:flex space-x-6">
+      <nav className="hidden md:flex space-x-6 items-center">
         <ul className="flex space-x-6">
           {links.map((link, index) => (
             <li key={index}>
@@ -39,6 +41,7 @@ export default function Navbar() {
           ))}
         </ul>
       </nav>
+      <CVButton />
       <div className="flex items-center space-x-4">
         <ThemeSwitcher />
         <button onClick={toggleMenu} className="focus:outline-none md:hidden">
