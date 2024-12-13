@@ -58,6 +58,19 @@ export const workExperience = [
 
 export const projects = [
   {
+    title: "Dedalus AI Chat",
+    description: "AI-powered chat interface with a collapsible sidebar.",
+    image: "/projects/ai-chat.jpg",
+    link: "https://github.com/slobodanbajic9/react-ai-chat",
+  },
+  {
+    title: "Tech Content Generator",
+    description:
+      "AI tool to generate technical documentation and blog posts from code snippets.",
+    image: "/projects/tech-generator.jpg",
+    link: "https://tech-content-generator.vercel.app/",
+  },
+  {
     title: "Net Partner 011 AB",
     description: "Web agency website built in Next.js with Contentful CMS.",
     image: "/projects/np011.jpg",
