@@ -1,8 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal Portfolio Website
+
+A modern, responsive portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features a clean design with dark/light mode support and smooth animations.
+
+## Features
+
+- 🌓 Dark/Light mode with system preference detection
+- 🎨 Responsive design for all devices
+- ✨ Smooth page transitions and animations using Framer Motion
+- 📧 Contact form with email integration using Resend
+- 🎯 SEO optimized
+- 🚀 Fast page loads with Next.js 14
+- 💅 Styled with Tailwind CSS
+- 🔍 TypeScript for type safety
+
+## Tech Stack
+
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Resend (for email)
+- Radix UI (for UI components)
+- Next Themes
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+2. Create a `.env` file in the root directory and add your Resend API key:
+
+```bash
+RESEND_API_KEY=your_resend_api_key
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +49,46 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+├── app/                  # Next.js app directory
+│   ├── about/           # About page
+│   ├── contact/         # Contact page
+│   ├── projects/        # Projects page
+│   └── page.tsx         # Home page
+├── components/          # React components
+├── data/               # Static data
+├── lib/                # Utility functions
+├── public/             # Static assets
+└── styles/            # Global styles
+```
 
-## Learn More
+## Key Components
 
-To learn more about Next.js, take a look at the following resources:
+- **ThemeSwitcher**: Handles dark/light mode switching
+- **Layout**: Main layout wrapper with responsive design
+- **Contact Form**: Interactive form with email integration
+- **Projects Gallery**: Showcase of portfolio projects
+- **About Section**: Personal information and work experience
+- **Navbar**: Responsive navigation with mobile menu
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The project is configured for easy deployment on Vercel. Simply connect your GitHub repository to Vercel for automatic deployments.
 
-## Deploy on Vercel
+## Environment Variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Required environment variables:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+RESEND_API_KEY=your_resend_api_key
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
