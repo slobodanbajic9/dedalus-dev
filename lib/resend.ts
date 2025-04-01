@@ -16,47 +16,21 @@ export const sendEmail = async (formData: FormData) => {
   await resend.emails.send({
     to: "slobodan.bajic9@gmail.com",
     from: "Slobodan Dev <onboarding@resend.dev>",
-    subject: `Message from ${fullName}`,
-    html: `<div className="p-4">
-      <h1 className="text-2xl font-bold">Hello, ${fullName}!</h1>
-      <p className="mt-2">Thank you for contacting me.</p>
-      <h3 className="mt-4 text-xl font-semibold">
-        Here is the message I received from you:
-      </h3>
-      <blockquote className="mt-2 italic border-l-4 border-blue-500 pl-4">
-        ${message}
-      </blockquote>
-      <p className="mt-4">
-        I will get back to you soon at your email: ${email}.
-      </p>
-      <p className="mt-4 font-bold mb-4">Kind regards,</p>
-      <div className="flex gap-8">
-        <a href="http://localhost:3000">
-          <Image src={logo} alt="Logo" width={80} height={80} />
-        </a>
-
-        <div className="flex flex-col justify-between items-start gap-4">
-          <a
-            href="tel:+46760727096"
-            className="flex items-center gap-4 flex-col">
-            <div className="flex gap-4">
-              <FaMobileAlt /> <span>+46760727096</span>
-            </div>
-          </a>
-          <a
-            href="mailto:slobodan.bajic9@gmail.com"
-            className="flex items-center gap-4 flex-col">
-            <div className="flex gap-4">
-              <FaEnvelope /> <span>slobodan.bajic9@gmail.com</span>
-            </div>
-          </a>
-          <a href="#" className="flex items-center gap-4 flex-col">
-            <div className="flex gap-4">
-              <FaLocationArrow /> <span>Malmö, Sweden</span>
-            </div>
-          </a>
+    subject: `New Contact Form Message from ${fullName}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h2 style="color: #333;">New Message from Contact Form</h2>
+        <div style="margin: 20px 0; padding: 15px; background-color: #f5f5f5; border-radius: 5px;">
+          <p><strong>Name:</strong> ${fullName}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p style="margin-top: 15px;"><strong>Message:</strong></p>
+          <p style="padding: 10px; background-color: white; border-left: 4px solid #0066cc;">${message}</p>
+        </div>
+        <hr style="border: 1px solid #eee; margin: 20px 0;">
+        <div style="color: #666; font-size: 12px;">
+          <p>This message was sent from your website's contact form.</p>
         </div>
       </div>
-    </div>`,
+    `,
   });
 };

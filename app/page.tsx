@@ -12,7 +12,7 @@ export default function Home() {
   }, []);
 
   const title = "Hey, Slobodan here!";
-  const text = `I am a full stack web developer who builds for the web with a
+  const text = `I am a software developer who builds for the web with a
         design-oriented approach. In addition to coding, I use my free time to
         practice football, go to the gym and hang out with friends.`;
   const links = [
