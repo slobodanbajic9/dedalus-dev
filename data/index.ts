@@ -28,27 +28,34 @@ export const techStack = [
 export const workExperience = [
   {
     id: 1,
+    title: "Software Engineer",
+    company: "IKEA",
+    image: "/work/ikea.svg",
+    duration: "2025 - ",
+  },
+  {
+    id: 2,
     title: "Full Stack Developer",
     company: "Net Partner 011 AB",
     image: "/work/np011.svg",
     duration: "2023 - 2024",
   },
   {
-    id: 2,
+    id: 3,
     title: "Web Developer",
     company: "Digital Arts Agency",
     image: "/work/digital-arts.svg",
     duration: "2022 - 2023",
   },
   {
-    id: 3,
+    id: 4,
     title: "Web Developer",
     company: "Wonderland AI Summit",
     image: "/work/wai-logo-new.png",
     duration: "2020 - 2022",
   },
   {
-    id: 4,
+    id: 5,
     title: "Frontend Developer",
     company: "Freelance",
     image: "/work/logo-blue.svg",
