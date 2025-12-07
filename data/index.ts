@@ -84,12 +84,6 @@ export const projects = [
     link: "https://www.np011.se/",
   },
   {
-    title: "Mobile app",
-    description: "Mobile application made in React Native using WeatherAPI.",
-    image: "/projects/weather-app.jpg",
-    link: "https://github.com/slobodanbajic9/react-native-weather-app",
-  },
-  {
     title: "None",
     description: "Ecommerce multi-language webshop built in Wordpress CMS.",
     image: "/projects/none.jpg",
