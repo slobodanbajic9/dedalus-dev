@@ -1,9 +1,5 @@
 "use server";
 
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 interface FormData {
   fullName: string;
   email: string;
@@ -13,11 +9,21 @@ interface FormData {
 export const sendEmail = async (formData: FormData) => {
   const { fullName, email, message } = formData;
 
-  await resend.emails.send({
-    to: "slobodan.bajic9@gmail.com",
-    from: "Slobodan Dev <onboarding@resend.dev>",
-    subject: `New Contact Form Message from ${fullName}`,
-    html: `
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error("RESEND_API_KEY is not configured.");
+  }
+
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      to: "slobodan.bajic9@gmail.com",
+      from: "Slobodan Dev <onboarding@resend.dev>",
+      subject: `New Contact Form Message from ${fullName}`,
+      html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <h2 style="color: #333;">New Message from Contact Form</h2>
         <div style="margin: 20px 0; padding: 15px; background-color: #f5f5f5; border-radius: 5px;">
@@ -32,5 +38,13 @@ export const sendEmail = async (formData: FormData) => {
         </div>
       </div>
     `,
+    }),
   });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(
+      `Failed to send email via Resend API: ${response.status} ${errorText}`,
+    );
+  }
 };
