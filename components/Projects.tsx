@@ -43,11 +43,11 @@ const ProjectsIntro: React.FC<ProjectsProps> = ({ title, text }) => {
             <div className="rounded-lg mt-4 mb-4 max-w-full">
               <div className="mb-4 flex items-center justify-center gap-8">
                 <Image
-                  width="300"
-                  height="300"
+                  width={300}
+                  height={300}
                   src={project.image}
                   alt={project.title}
-                  className="rounded-lg cover opacity-80 hover:opacity-100"
+                  className="rounded-lg object-cover opacity-80 hover:opacity-100 w-full h-auto"
                 />
               </div>
               <div className="mt-5 mx-auto">

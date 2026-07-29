@@ -26,7 +26,14 @@ export default function Navbar() {
   return (
     <header className="flex justify-between items-center py-4 px-4 md:px-8">
       <Link href="/">
-        <Image src={logo} alt="logo" width={50} height={50} />
+        <Image
+          src={logo}
+          alt="logo"
+          width={50}
+          height={50}
+          loading="eager"
+          className="w-[50px] h-auto"
+        />
       </Link>
       <nav className="hidden md:flex space-x-6 items-center">
         <ul className="flex space-x-6">

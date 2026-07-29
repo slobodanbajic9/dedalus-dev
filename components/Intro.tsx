@@ -27,7 +27,8 @@ const Intro: React.FC<IntroProps> = ({ title, text, links }) => {
           alt="avatar"
           width={150}
           height={150}
-          className="rounded-full"
+          loading="eager"
+          className="rounded-full w-[150px] h-auto"
         />
       </motion.div>
       <motion.h1
